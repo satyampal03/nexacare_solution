@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import logo from "../images/logo.png";
 
-import { SERVICES } from '../constants';
+import { SERVICES } from "../constants";
 
 export default function Navbar() {
-
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -14,8 +14,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -24,57 +24,71 @@ export default function Navbar() {
   }, [location]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services', hasMegaMenu: true },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Services", path: "/services", hasMegaMenu: true },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
-        isScrolled ? 'py-4' : 'py-8'
+        isScrolled ? "py-4" : "py-8"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div 
+        <div
           className={`relative flex items-center justify-between px-6 py-3 rounded-full border border-white/10 backdrop-blur-xl bg-background/40 transition-all duration-500 ${
-            isScrolled ? 'shadow-2xl shadow-primary/10' : ''
+            isScrolled ? "shadow-2xl shadow-primary/10" : ""
           }`}
         >
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-              <span className="text-white font-bold text-xl">N</span>
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-14 h-14 p-2 bg-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+              <img
+                src={logo}
+                alt="Nexacare"
+                className="object-contain w-full h-full"
+              />
             </div>
-            <span className="text-xl font-display font-bold tracking-tighter">
+
+            <span className="text-2xl md:text-3xl font-display font-bold tracking-tighter text-white">
               NEXACARE<span className="text-primary">.</span>
             </span>
           </Link>
 
+
+
+          
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <div
                 key={link.name}
                 className="relative"
-                onMouseEnter={() => link.hasMegaMenu && setActiveMenu('services')}
+                onMouseEnter={() =>
+                  link.hasMegaMenu && setActiveMenu("services")
+                }
                 onMouseLeave={() => setActiveMenu(null)}
               >
                 <Link
                   to={link.path}
                   className={`text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
-                    location.pathname === link.path ? 'text-primary' : 'text-white/70'
+                    location.pathname === link.path
+                      ? "text-primary"
+                      : "text-white/70"
                   }`}
                 >
                   {link.name}
                   {link.hasMegaMenu && (
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeMenu === 'services' ? 'rotate-180' : ''}`} />
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-300 ${activeMenu === "services" ? "rotate-180" : ""}`}
+                    />
                   )}
                 </Link>
 
                 {/* Mega Menu Trigger Area */}
-                {link.hasMegaMenu && activeMenu === 'services' && (
+                {link.hasMegaMenu && activeMenu === "services" && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[900px]">
                     <MegaMenu />
                   </div>
@@ -135,7 +149,6 @@ export default function Navbar() {
                       ))}
                     </div>
                   )}
-
                 </div>
               ))}
             </div>
@@ -163,7 +176,9 @@ function MegaMenu() {
             transition={{ delay: idx * 0.1 }}
             className="group"
           >
-            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${service.color} mb-4 flex items-center justify-center`}>
+            <div
+              className={`w-10 h-10 rounded-xl bg-gradient-to-br ${service.color} mb-4 flex items-center justify-center`}
+            >
               <div className="w-5 h-5 bg-white/20 rounded-md" />
             </div>
             <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-2">
@@ -188,7 +203,7 @@ function MegaMenu() {
           </motion.div>
         ))}
       </div>
-      
+
       <div className="mt-8 pt-8 border-top border-white/10 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center">
@@ -196,7 +211,9 @@ function MegaMenu() {
           </div>
           <div>
             <p className="text-sm font-bold">Need a custom solution?</p>
-            <p className="text-xs text-white/40">Our experts are ready to help you scale.</p>
+            <p className="text-xs text-white/40">
+              Our experts are ready to help you scale.
+            </p>
           </div>
         </div>
         <Link

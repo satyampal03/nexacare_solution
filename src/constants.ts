@@ -113,15 +113,16 @@ export const TESTIMONIALS = [
     name: 'Sarah Johnson',
     role: 'CEO, TechFlow',
     content: 'Nexacare Solution helped our business improve both marketing performance and customer support efficiency.',
-    image: 'https://i.pravatar.cc/150?u=sarah'
+    image: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg'
   },
   {
     name: 'Ahmed Al-Maktoum',
     role: 'Founder, Dubai Ventures',
     content: 'The best digital agency in Dubai. Their BPO services are second to none.',
-    image: 'https://i.pravatar.cc/150?u=ahmed'
+    image: 'https://images.pexels.com/photos/35055806/pexels-photo-35055806.jpeg'
   }
 ];
+
 
 export const BLOG_POSTS = [
   {

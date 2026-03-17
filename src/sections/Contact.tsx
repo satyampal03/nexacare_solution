@@ -30,12 +30,12 @@ export default function Contact() {
               <ContactInfoItem
                 icon={<Mail className="w-6 h-6" />}
                 label="Email Us"
-                value="hello@nexacare.com"
+                value="Info@nexacaresolution.com"
               />
               <ContactInfoItem
                 icon={<Phone className="w-6 h-6" />}
                 label="Call Us"
-                value="+971 4 123 4567"
+                value="+971 5 430 43213"
               />
               <ContactInfoItem
                 icon={<MapPin className="w-6 h-6" />}
