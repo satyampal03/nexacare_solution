@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+
 import {
   Facebook,
   Twitter,
@@ -10,7 +11,7 @@ import {
 } from "lucide-react";
 import { SERVICES } from "../constants";
 
-import logo from "../images/logo.png";
+import logo from "../images/logo.png"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

@@ -123,18 +123,17 @@ export const TESTIMONIALS = [
   }
 ];
 
-
 export const BLOG_POSTS = [
   {
-    title: 'Digital Marketing Trends 2024',
+    title: 'Digital Marketing Trends 2026',
     category: 'Marketing',
-    date: 'March 10, 2024',
+    date: 'March 10, 2026',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'The Benefits of Outsourcing',
     category: 'BPO',
-    date: 'March 05, 2024',
+    date: 'March 05, 2026',
     image: 'https://images.unsplash.com/photo-1521791136064-7986c2959d93?auto=format&fit=crop&w=800&q=80'
   }
 ];  

@@ -1,8 +1,10 @@
 {
-  "name": "react-example",
+  "name": "nexacare-solution-marketing",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Marketing website for Nexacare Solution - Digital Marketing & BPO Services",
+  "author": "Nexacare Solution",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",

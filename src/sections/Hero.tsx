@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, MousePointer2 } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import * as THREE from 'three';
 import Magnetic from '../components/Magnetic';
 import gsap from 'gsap';
@@ -174,6 +174,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-primary rounded-full font-bold text-lg flex items-center gap-2 glow-primary hover:bg-primary/90 transition-all"
+                aria-label="Start a new project with Nexacare Solution"
               >
                 Start a Project
                 <ArrowRight className="w-5 h-5" />
@@ -185,6 +186,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-white/5 border border-white/10 rounded-full font-bold text-lg flex items-center gap-2 hover:bg-white/10 transition-all backdrop-blur-sm"
+                aria-label="View our services and offerings"
               >
                 <Play className="w-5 h-5 fill-white" />
                 View Our Services
